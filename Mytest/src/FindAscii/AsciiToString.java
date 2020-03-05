@@ -6,6 +6,4 @@ public class AsciiToString {
 		char asciiString = (char) order;
 		System.out.println(asciiString);
 	}
-	
-	
 }

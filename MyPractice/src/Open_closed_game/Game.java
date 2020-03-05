@@ -67,8 +67,10 @@ public class Game {
 		if (this.personPlayer.predictor) {
 			int lenInput = this.personPlayer.answer.length();
 			int numberOfO = Integer.parseInt(this.personPlayer.answer.substring(lenInput-1, lenInput));
+			System.out.println("number of O "+numberOfO);
 			String setLiteral = this.personPlayer.answer.substring(lenInput-1).concat(this.aiPlayer.answer);
 			int countO = Game.countO(setLiteral);
+			System.out.println("count O "+countO);
 			if (numberOfO == countO) {
 				System.out.println("person win");
 				return Game.win;
@@ -81,8 +83,10 @@ public class Game {
 			if(this.aiPlayer.predictor) {
 				int lenInput = this.aiPlayer.answer.length();
 				int numberOfO = Integer.parseInt(this.aiPlayer.answer.substring(lenInput-1, lenInput));
+				System.out.println("number of O "+numberOfO);
 				String setLiteral = this.aiPlayer.answer.substring(lenInput-1).concat(this.personPlayer.answer);
 				int countO = Game.countO(setLiteral);
+				System.out.println("count O "+countO);
 				if (numberOfO == countO) {
 					System.out.println("ai win");
 					return Game.win;
@@ -130,8 +134,8 @@ public class Game {
 	Scanner again = new Scanner(System.in);
 	System.out.println("Do you want to play it again?(y/n): ");
 	String result = again.nextLine().toUpperCase();
-	again.close();
-	if (result == "Y") {
+//	again.close();
+	if (result.equals("Y")) {
 		return true;
 	}
 	else {

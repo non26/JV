@@ -6,7 +6,7 @@ import java.io.InputStream;
 public class Game {
 	final static String[] msgPredictor = {"You are the predictor", "AI is the predictor "};
 	final static Boolean win = true;
-	final InputStream in = System.in;
+	final InputStream in = System.in; 
 	
 	Player personPlayer;
 	Player aiPlayer;
@@ -67,10 +67,10 @@ public class Game {
 		if (this.personPlayer.predictor) {
 			int lenInput = this.personPlayer.answer.length();
 			int numberOfO = Integer.parseInt(this.personPlayer.answer.substring(lenInput-1, lenInput));
-			System.out.println("number of O "+numberOfO);
+//			System.out.println("number of O "+numberOfO);
 			String setLiteral = this.personPlayer.answer.substring(lenInput-1).concat(this.aiPlayer.answer);
 			int countO = Game.countO(setLiteral);
-			System.out.println("count O "+countO);
+//			System.out.println("count O "+countO);
 			if (numberOfO == countO) {
 				System.out.println("person win");
 				return Game.win;
@@ -83,10 +83,10 @@ public class Game {
 			if(this.aiPlayer.predictor) {
 				int lenInput = this.aiPlayer.answer.length();
 				int numberOfO = Integer.parseInt(this.aiPlayer.answer.substring(lenInput-1, lenInput));
-				System.out.println("number of O "+numberOfO);
+//				System.out.println("number of O "+numberOfO);
 				String setLiteral = this.aiPlayer.answer.substring(lenInput-1).concat(this.personPlayer.answer);
 				int countO = Game.countO(setLiteral);
-				System.out.println("count O "+countO);
+//				System.out.println("count O "+countO);
 				if (numberOfO == countO) {
 					System.out.println("ai win");
 					return Game.win;

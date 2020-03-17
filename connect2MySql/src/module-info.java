@@ -1,0 +1,2 @@
+module connect2MySql {
+}
